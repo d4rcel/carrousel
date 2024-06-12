@@ -21,14 +21,12 @@ const CarouselItem = ({ item, isActive, onVideoEnd }) => {
       ) : (
         <video 
           ref={videoRef} 
-          onEnded={onVideoEnd} 
-          src={item.src} 
+          onEnded={onVideoEnd}
           muted 
           autoPlay
-          controls
-          onError={(e) => console.error('Video eror:', e)}
-          type="video/mp4"
-        />
+          controls>
+            <source src={item.src} type="video/mp4"/>
+        </video>
       )}
     </div>
   );
